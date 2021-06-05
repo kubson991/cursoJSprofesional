@@ -1,16 +1,7 @@
-class MediaPlayer{
-    constructor(config){
-        this.media=config
-    }
-    togglePlay(){
-        if (this.media.paused) {
-            this.media.play();
-          } else {
-            this.media.pause();
-          }
-    };
-}
+import MediaPlayer from "./Mediaplayer.js"
+import AutoPlay from "../plugins/AutoPlay.js"
 const video = document.querySelector('video');
-const player = new MediaPlayer(video) 
+const player = new MediaPlayer(video,[new AutoPlay()]) 
 const button = document.querySelector('button');
 button.onclick = () => player.togglePlay();
+ 
