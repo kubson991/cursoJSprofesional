@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(`this : ${this}`)
+        function whoIsThis() {
+            return this
+            
+        }
+        console.log(whoIsThis())
+
+        
+        function whoIsThisStrict() {
+            "use strict"
+            return this
+            
+        }
+        console.log(whoIsThisStrict())
+        const person={
+            name: 'Gabriel',
+            saludar:function () {  
+                console.log(`hola soy ${this.name}`)     
+            }
+        }
+        person.saludar()
+        const accion =person.saludar
+        accion()
+        class Person{
+            constructor(name){
+                this.name =name
+            }
+            saludar(){
+                console.log(`hola soy ${this.name}` )
+            }
+        }
+        const Angela= new Person("Angela")
+        Angela.saludar()
+    </script>
+</body>
+</html>

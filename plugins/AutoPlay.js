@@ -1,7 +1,9 @@
- class AutoPlay{
-    constructor(player){
-        player.mute()=true
+class AutoPlay{
+    constructor(){}
+    run (player){
+        player.mute()
         player.togglePlay()
+ 
     }
- }
+}
 export default AutoPlay

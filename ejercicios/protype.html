@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const zelda={
+        //     name:"zelda"
+        // }
+        // zelda.saludar=function () {
+        //     console.log(`hola soy ${this.name}`)
+        // }
+        // zelda.saludar()
+        // const link={
+        //     name:"link"
+        // }
+        // link.saludar=function () {
+        //     console.log(`hola soy ${this.name}`)
+        // }
+        // link.saludar()
+        // const heroMethods={
+        //     saludar:function(){
+        //         console.log(`hola soy super ${this.name}`)
+        //     }
+        // }
+        //     function hero(name) {
+        //         const hero= Object.create(heroMethods)
+        //         hero.name=name
+        //         hero.saludar=heroMethods.saludar
+        //         return hero
+        //     }
+        //     const zelda = hero("zelda")
+        //     zelda.saludar()
+
+        // const heroMethods={
+        //     saludar:function(){
+        //         console.log(`hola soy super ${this.name}`)
+        //     }
+        // }
+        //     function hero(name) {
+        //         const hero= Object.create(heroMethods)
+        //         hero.name=name
+        //         return hero
+        //     }
+
+        //     hero.prototype.saludar=function(){
+        //         hero.name=name
+        //         return hero
+        //     }
+
+        //     const zelda = hero("zelda")
+        //     zelda.saludar()
+ 
+            function hero(name) {
+                // const hero= Object.create(heroMethods)
+                this.name=name
+                // return hero
+            }
+
+            hero.prototype.saludar=function(){
+                console.log(`hola soy new super ${this.name}`)             
+            }
+
+            const zelda = new hero("zelda")
+            zelda.saludar()
+            //propiedades de instancia
+            console.log(`name:`,zelda.name)  
+            //propiedades de la clase
+            console.log("saludar:",zelda.saludar)    
+            //propiedades heredadas  
+            console.log("toString",zelda.toString)
+            //hasOwnProoperty (ade donde sale toString)
+            console.log("zelda.hasOwnProperty('name')",zelda.hasOwnProperty('name'))
+            //para ver prototipos object.getPrototypeOf(zelda)
+    </script>
+</body>
+</html>

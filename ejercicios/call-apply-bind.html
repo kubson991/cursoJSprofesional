@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>abre la consola we</h2>
+    <ul>
+        <li><button class="s">Hola</button></li>
+        <li><button class="s">adios</button></li>
+        <li><button class="s">xdxd</button></li>
+    </ul>
+    
+    <script>
+        function saludar() {
+            console.log(`hola soy: ${this.name} ${this.apellido}`)
+        }
+        const Richard={
+            name:"Richard",
+            apellido:"Poveda"
+        }
+
+        saludar.call(Richard)  //establece el valor del this
+
+        function caminar(metros,direccion) {
+            console.log(`${this.name} camina ${metros} metros hacia ${direccion}.`)
+            
+        }
+        caminar.call(Richard,400,"Norte")
+        caminar.apply(Richard,[800,`Noreste`]) //estable un this y introduce los valores tipo arreglo
+        
+        const daniel = {name:"Daniel",apellido:"Sanchez",}
+        const danielSaluda=saludar.bind(daniel)
+        danielSaluda()
+
+        const danielCamina =caminar.bind(daniel,1000)
+        danielCamina(`este`)
+
+        const buttons=document.getElementsByClassName("s")
+        Array.from(buttons).forEach(button => {
+            button.onclick=()=>alert(`nunca pares de aprender`)
+        })                              
+    </script>
+</body>
+</html>                                                                         
