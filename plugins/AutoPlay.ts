@@ -1,6 +1,8 @@
+import MediaPlayer from "../assets/Mediaplayer"
+
 class AutoPlay{
     constructor(){}
-    run (player){
+    run (player:MediaPlayer){
         player.mute()
         player.togglePlay()
  

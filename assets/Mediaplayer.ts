@@ -1,9 +1,25 @@
+import { relative } from "path/posix"
+
 class MediaPlayer{
+
+    media:HTMLMediaElement
+    plugins:any[]
+    container:HTMLElement
+
     constructor(config,plugins){
         this.media=config
         this.plugins=plugins || []  
+        this.initPlayer()
         this.initPlugins()
     }
+
+    initPlayer(){
+        this.container =document.createElement('div')
+        this.container.style.position='relative'
+        this.media.parentNode.insertBefore(this.container,this.media)
+        this.container.appendChild(this.media)
+    }
+
     togglePlay(){
         if (this.media.paused) {
             this.media.play();
@@ -18,7 +34,7 @@ class MediaPlayer{
             this.media.muted=true;
            
     };
-    initPlugins(){
+    private initPlugins(){
         this.plugins.forEach(plugin => {
             plugin.run(this)
     

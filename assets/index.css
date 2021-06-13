@@ -36,3 +36,37 @@ main {
 .movie {
   width: 100%;
 }
+
+.ads{
+  position: absolute;
+  bottom:0;
+  width: 100%;
+  height: 80px;  
+  margin: 0;   
+  background-color: #03030360;              
+}
+
+.ads a{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  text-decoration: none;
+ 
+}
+
+.ads img{
+  height:70%;
+}
+.ads__info{
+  
+  color:white
+}
+.ads__info h5{
+  margin-bottom: 8px;
+  margin-top: 5px;
+  
+}
+
+.ads__info p{
+  margin-bottom: 0;
+}
